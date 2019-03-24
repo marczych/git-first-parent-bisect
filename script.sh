@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/python
 
-set -euo pipefail
+import pipefail
 
 # Counts the number of words in the first argument.
 
