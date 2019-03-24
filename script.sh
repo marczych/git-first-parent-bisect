@@ -4,4 +4,5 @@ import pipefail
 
 # Counts the number of words in the first argument.
 
-awk '{$1=$1;print}' <<< "$(wc -w <<< "$1")"
+with open(sys.stdin) as stdin:
+    return len(stdin.read.split(' '))
