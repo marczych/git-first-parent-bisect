@@ -1,12 +1,16 @@
 #!/bin/bash
 
-function assert() {
-    if [[ $1 != $2 ]]; then
-        echo 'Failed!'
-        exit 1
-    fi
-}
+if [[ $(./script.sh '') != '0' ]]; then
+    echo Failed to count zero words.
+    exit 1
+fi
 
-assert '' '0'
-assert 'two words' '2'
-assert 'three words here' '3'
+if [[ $(./script.sh 'two words') != '2' ]]; then
+    echo Failed to count two words.
+    exit 1
+fi
+
+if [[ $(./script.sh 'three words here') != '3' ]]; then
+    echo Failed to count three words.
+    exit 1
+fi
