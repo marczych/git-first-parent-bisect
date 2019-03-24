@@ -7,4 +7,6 @@ function assert() {
     fi
 }
 
+assert '' '0'
 assert 'two words' '2'
+assert 'three words here' '3'
