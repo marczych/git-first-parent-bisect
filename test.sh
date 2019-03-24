@@ -1,6 +1,10 @@
 #!/bin/bash
 
-if [[ $(./script.sh 'two words') != '2' ]]; then
-    echo Failed to count words.
-    exit 1
-fi
+function assert() {
+    if [[ $1 != $2 ]]; then
+        echo 'Failed!'
+        exit 1
+    fi
+}
+
+assert 'two words' '2'
