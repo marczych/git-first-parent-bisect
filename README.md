@@ -1,5 +1,12 @@
 # git-first-parent-bisect
 
+## Deprecation Notice
+
+`git bisect` learned the `--first-parent` option in [2.29] so this script
+is no longer necessary.
+
+[2.29]: https://github.com/git/git/blob/master/Documentation/RelNotes/2.29.0.txt
+
 ## Motivation
 
 `git bisect` is a powerful tool to detect when bugs were introduced. This is
