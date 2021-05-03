@@ -13,9 +13,9 @@ is no longer necessary.
 especially true when using `git bisect run`. However, bisecting with complex
 branching and merging sometimes results in invalid or incorrect results because
 bisect lands on temporary commits that don't build. Oftentimes, you want to
-only test the commits that were made _on_ a particular branch (e.g. `master`)
+only test the commits that were made _on_ a particular branch (e.g. `main`)
 and skip all of the intermediate commits on branches that were merged into
-`master`.
+`main`.
 
 ## Usage
 
@@ -90,10 +90,10 @@ bisect run success
 ```
 
 This is correct in that the test fails on `5567014` but it is fixed on the
-`test-more-tests` branch before it gets merged to master so it isn't the commit
+`test-more-tests` branch before it gets merged to `main` so it isn't the commit
 we're looking for.
 
-We can instead use `git-first-parent-bisect` to find the commit on `master`
+We can instead use `git-first-parent-bisect` to find the commit on `main`
 that introduced the failing test:
 
 ```
@@ -113,7 +113,7 @@ bisect run cannot continue any more
 ```
 
 All of the listed commits are the potentially broken ones in the
-`test-add-help` branch which _does_ introduce the test failure to master. While
+`test-add-help` branch which _does_ introduce the test failure to `main`. While
 the exact commit wasn't found, you can easily bisect on that branch to narrow
 it down further.
 
